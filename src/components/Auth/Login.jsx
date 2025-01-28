@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import Waves from '../others/Waves';
 
 const Login = ({handleLogin}) => {
 
@@ -13,31 +14,34 @@ const Login = ({handleLogin}) => {
   }
 
   return (
-    <div className='flex h-screen w-screen items-center justify-center'>
-        <div className='border-2 border-emerald-600 rounded-xl p-20'>
-            <form 
-            onSubmit={(e) => {
-              submitHandler(e)
-            }}
-            className='flex flex-col items-center justify-center'>
+    <div>
+      <Waves />
+      <div className='flex h-screen w-screen items-center justify-center z-10 absolute'>
+          <div className='border-2 border-white rounded-xl p-20 bg-black'>
+              <form 
+              onSubmit={(e) => {
+                submitHandler(e)
+              }}
+              className='flex flex-col items-center justify-center'>
 
-                <input 
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-                className='text-white outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400' type="email" placeholder='Enter your email' required/>
+                  <input 
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                  }}
+                  className='text-white outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400' type="email" placeholder='Enter your email' required/>
 
-                <input 
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value)
-                }}
-                className='text-white outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400 mt-3' type="password" placeholder='Enter password' required/>
+                  <input 
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value)
+                  }}
+                  className='text-white outline-none bg-transparent border-2 border-emerald-600 text-xl py-3 px-5 rounded-full placeholder:text-gray-400 mt-3' type="password" placeholder='Enter password' required/>
 
-                <button className='text-white outline-none border-none bg-emerald-600 text-xl py-3 px-5 rounded-full mt-5 w-full'>Login</button>
-            </form>
-        </div>
+                  <button className='text-black outline-none border-none bg-white text-xl py-3 px-5 rounded-full mt-5'>Login</button>
+              </form>
+          </div>
+      </div>
     </div>
   )
 }
